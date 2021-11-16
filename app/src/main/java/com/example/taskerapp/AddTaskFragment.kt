@@ -23,16 +23,20 @@ class AddTaskFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAddTaskBinding.inflate(inflater, container, false)
-        val inputMethodManager =
-            requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(binding.edTv.windowToken, 0)
+//        val inputMethodManager =
+//            requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//        inputMethodManager.hideSoftInputFromWindow(binding.edTv.windowToken, 0)
+
+        
+
         binding.apply {
             cancelBtn.setOnClickListener {
                 findNavController().popBackStack()
             }
             doneBtn.setOnClickListener {
-                Toast.makeText(requireContext(), "Umarxon aka qalesiz!!!", Toast.LENGTH_SHORT)
-                    .show()
+                if (edTv.text.toString().isNotEmpty()) {
+
+                }
             }
             date.setOnClickListener {
                 CalendarPicker(requireContext()).apply {
