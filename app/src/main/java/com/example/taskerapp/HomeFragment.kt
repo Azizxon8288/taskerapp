@@ -12,6 +12,7 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
+import androidx.navigation.fragment.findNavController
 import com.example.taskerapp.databinding.FragmentHomeBinding
 import java.lang.reflect.Method
 
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
                     setOnMenuItemClickListener { item ->
                         when (item.itemId) {
                             R.id.task ->
-                                Toast.makeText(requireContext(), "Task", Toast.LENGTH_SHORT).show()
+                                findNavController().navigate(R.id.addTaskFragment)
                             R.id.list ->
                                 Toast.makeText(requireContext(), "List", Toast.LENGTH_SHORT).show()
                         }
@@ -66,8 +67,6 @@ class HomeFragment : Fragment() {
                         e.printStackTrace()
                     }
                 }
-
-                // finally, show the popupMenu menu
                 popupMenu.show()
             }
         }

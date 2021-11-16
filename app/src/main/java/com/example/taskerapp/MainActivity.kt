@@ -2,6 +2,7 @@ package com.example.taskerapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.Navigation
 import com.example.taskerapp.databinding.ActivityMainBinding
 
@@ -16,5 +17,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp()
     }
-
 }
